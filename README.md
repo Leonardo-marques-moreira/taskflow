@@ -22,7 +22,7 @@ Requisito: Python 3.12 ou mais recente.
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+.venv\Scripts\activate.bat
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
@@ -57,5 +57,5 @@ requirements.txt     # dependências com versões fixas
 
 ## Integrantes
 
-- Nome 1 (@usuario-github)
+- Leonardo Marques Moreira RA:60000077 (@Leonardo-marques-moreira)
 - Nome 2 (@usuario-github)
