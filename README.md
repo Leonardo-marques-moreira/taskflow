@@ -59,3 +59,8 @@ requirements.txt     # dependências com versões fixas
 
 - Leonardo Marques Moreira RA:60000077 (@Leonardo-marques-moreira)
 - Nome 2 (@usuario-github)
+
+## Histórico de commits
+
+![Histórico de commits](docs/prints/historico-commits.png)
+
