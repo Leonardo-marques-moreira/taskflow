@@ -13,6 +13,7 @@ API REST de tarefas em Python (FastAPI). Projeto-base da disciplina **DevOps Too
 | POST | `/tasks` | Cria uma tarefa (`{"title": "...", "done": false}`) |
 | PUT | `/tasks/{id}` | Atualiza uma tarefa |
 | DELETE | `/tasks/{id}` | Remove uma tarefa |
+| GET | `/tasks/{id}` | Busca uma tarefa pelo id (404 se não existir) |
 
 Os dados ficam em memória: reiniciou a API, as tarefas somem.
 
