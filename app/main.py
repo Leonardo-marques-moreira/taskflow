@@ -65,3 +65,10 @@ def delete_task(task_id: int) -> Response:
     if _tasks.pop(task_id, None) is None:
         raise HTTPException(status_code=404, detail="Tarefa não encontrada")
     return Response(status_code=status.HTTP_204_NO_CONTENT)
+
+@app.get("/tasks/{task_id}", response_model=Task)
+def get_task(task_id: int) -> Task:
+    task = _tasks.get(task_id)
+    if task is None:
+        raise HTTPException(status_code=404, detail="Tarefa não encontrada")
+    return task
