@@ -35,8 +35,11 @@ def reset_db() -> None:
 
 
 @app.get("/tasks", response_model=list[Task])
-def list_tasks() -> list[Task]:
-    return list(_tasks.values())
+def list_tasks(done: bool | None = None) -> list[Task]:
+    tasks = list(_tasks.values())
+    if done is None:
+        return tasks
+    return [t for t in tasks if t.done == done]
 
 
 @app.post("/tasks", response_model=Task, status_code=status.HTTP_201_CREATED)
