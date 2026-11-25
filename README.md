@@ -69,3 +69,8 @@ requirements.txt     # dependências com versões fixas
 
 ![Histórico de commits](docs/prints/historico-commits.png)
 
+## Pull Requests
+
+- [#1: Template de PR](https://github.com/Leonardo-marques-moreira/taskflow/pull/1)
+- [#2: Busca por id](https://github.com/Leonardo-marques-moreira/taskflow/pull/2)
+- [#3: Filtro por status](https://github.com/Leonardo-marques-moreira/taskflow/pull/3)
