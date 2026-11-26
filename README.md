@@ -1,5 +1,7 @@
 # TaskFlow
 
+![CI](https://github.com/Leonardo-marques-moreira/taskflow/actions/workflows/ci.yml/badge.svg)
+
 API REST de tarefas em Python (FastAPI). Projeto-base da disciplina **DevOps Tools** (ADS · UNIPAR · 2026).
 
 > Este repositório começa **sem nenhuma automação**. A cada semana, sua dupla adiciona uma camada DevOps:
@@ -13,11 +15,9 @@ API REST de tarefas em Python (FastAPI). Projeto-base da disciplina **DevOps Too
 | POST | `/tasks` | Cria uma tarefa (`{"title": "...", "done": false}`) |
 | PUT | `/tasks/{id}` | Atualiza uma tarefa |
 | DELETE | `/tasks/{id}` | Remove uma tarefa |
-<<<<<<< HEAD
 | GET | `/tasks?done=true` | Filtra tarefas por status (`true` ou `false`) |
-=======
 | GET | `/tasks/{id}` | Busca uma tarefa pelo id (404 se não existir) |
->>>>>>> origin/main
+
 
 Os dados ficam em memória: reiniciou a API, as tarefas somem.
 
@@ -74,3 +74,28 @@ requirements.txt     # dependências com versões fixas
 - [#1: Template de PR](https://github.com/Leonardo-marques-moreira/taskflow/pull/1)
 - [#2: Busca por id](https://github.com/Leonardo-marques-moreira/taskflow/pull/2)
 - [#3: Filtro por status](https://github.com/Leonardo-marques-moreira/taskflow/pull/3)
+
+## Integração contínua
+
+Todo push e pull request para a `main` roda o workflow `ci.yml`, com lint (ruff) e testes com cobertura mínima de 70%. A `main` só aceita merge com o check `testes` verde.
+
+**PR bloqueado pelo CI (check vermelho):**
+
+![CI bloqueado](docs/prints/ci-bloqueado.png)
+
+**Log do erro:**
+
+![Log do erro](docs/prints/ci-log.png)
+
+**Depois da correção (check verde):**
+
+![CI verde](docs/prints/ci-verde.png)
+
+### GitHub Actions × Jenkins
+
+| Critério | GitHub Actions | Jenkins |
+| --- | --- | --- |
+| Tempo de configuração | Minutos: um arquivo YAML no próprio repositório | Mais demorado: instalar o servidor e os plugins |
+| Onde roda | Nos servidores do GitHub, sem infraestrutura própria | Num servidor mantido pela própria equipe |
+| Quem mantém | O GitHub | A equipe, com atualizações e segurança |
+| Legibilidade | YAML curto e direto | Jenkinsfile (Groovy) ou configuração pela interface |
